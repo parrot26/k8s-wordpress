@@ -44,7 +44,7 @@ kubectl apply -f 03-wordpress-lb.yml
 
 ### _Para acceder a la aplicación a través del Load Balancer_
 
-_Verificamos a IP pública del Load Balancer_
+_Verificamos a IP Externa del Load Balancer_
 
 ```ssh
 kubectl -n wordpress-test get svc
@@ -60,7 +60,7 @@ wordpress-lb   LoadBalancer   10.152.182.162   192.168.100.30   80:31398/TCP   2
 
 _Ahora podemos acceder desde un navegador remoto:_
 
-_Según este ejemplo nuestra IP pública es **192.168.100.30**, entonces vamos al navegador web externo:_
+_Según este ejemplo nuestra IP Externa es **192.168.100.30**, entonces vamos al navegador web externo:_
 
 ```
 http://192.168.100.30
