@@ -1,13 +1,13 @@
 ![Imagen.](/image/wordpress-web.png "Imagen.")
 
 #
-# _Wordpress en Kubernetes_
+# Wordpress en Kubernetes
 
 ### Comenzando 🚀
-_Este es un simple despliegue de **wordpress** en **kubernetes** ._
-_El despliegue consta de 4 archivos **.yml**._
+Este es un simple despliegue de **wordpress** en **kubernetes** .
+El despliegue consta de 4 archivos **.yml**.
 
-#### _Descripción:_
+#### Descripción:
 - **00-namespaces.yml** Crea el namespaces para aislar el recurso.
 - **01-wordpress-service.yml** Crea el servicio necesario para acceder a la aplicación.
 - **02-wordpress-rc.yml** Crea el Replicaron Controller y la imagen.
@@ -17,14 +17,14 @@ _El despliegue consta de 4 archivos **.yml**._
 # 
 ### Hora de meter mano 🛠️
 
-_Clonamos el repo en el clúster._
+Clonamos el repo en el clúster.
 
 ```ssh
  git clone https://github.com/parrot26/k8s-wordpress.git
 ```
 
 
-_Empezamos a crear los recursos aplicando los manifiestos_
+Empezamos a crear los recursos aplicando los manifiestos
 
 ```ssh
 kubectl apply -f 00-namespaces.yml
@@ -42,15 +42,15 @@ kubectl apply -f 02-wordpress-rc.yml
 kubectl apply -f 03-wordpress-lb.yml
 ```
 
-### _Para acceder a la aplicación a través del Load Balancer_
+### Para acceder a la aplicación a través del Load Balancer
 
-_Verificamos a IP Externa del Load Balancer_
+Verificamos a IP Externa del Load Balancer
 
 ```ssh
 kubectl -n wordpress-test get svc
 ```
 
-_Se obtiene algo parecido a esto:_
+Se obtiene algo parecido a esto:
 
 ```
 NAME           TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)        AGE
@@ -58,9 +58,9 @@ wordpress      NodePort       10.152.182.178   <none>           80:30000/TCP   2
 wordpress-lb   LoadBalancer   10.152.182.162   192.168.100.30   80:31398/TCP   21h
 ```
 
-_Ahora podemos acceder desde un navegador remoto:_
+Ahora podemos acceder desde un navegador remoto:
 
-_Según este ejemplo nuestra IP Externa es **192.168.100.30**, entonces vamos al navegador web externo:_
+Según este ejemplo nuestra IP Externa es **192.168.100.30**, entonces vamos al navegador web externo:
 
 ```
 http://192.168.100.30
@@ -68,14 +68,14 @@ http://192.168.100.30
 
 ### _Nota:_
 
-_Para poder acceder remotamente vía web tiene que estar permitido el tráfico en el FW del server donde está el clúster._
+Para poder acceder remotamente vía web tiene que estar permitido el tráfico en el FW del server donde está el clúster.
 
 
 # Plus:
 
-_Sí estás utilizando **ArgoCD** en tu clúster podes aplicar este manifiesto y desplegar todo de forma automática sin tener que estar clonando el repo e ir aplicando todos los recursos de a uno_
+Sí estás utilizando **ArgoCD** en tu clúster podes aplicar este manifiesto y desplegar todo de forma automática sin tener que estar clonando el repo e ir aplicando todos los recursos de a uno
 
-_Creas un archivo **nombre_archivo.yml** y copias este contenido:_
+Creas un archivo **nombre_archivo.yml** y copias este contenido:
 
 ```
 apiVersion: argoproj.io/v1alpha1
@@ -94,20 +94,20 @@ spec:
   project: default
 ```
 
-_Guardas los cambios, le das permiso de ejecución al archivo y lo ejecutas con el siguiente comando:_
+Guardas los cambios, le das permiso de ejecución al archivo y lo ejecutas con el siguiente comando:
 
 ```
 kubectl apply -f nombre_archivo.yml
 ```
 
-_Listo! Después entrando a ArgoCD tenes que darle a SYNC a la aplicación_
+Listo! Después entrando a ArgoCD tenes que darle a SYNC a la aplicación
 
 # 
 ### Contribuyendo 🖇️
 
-_Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar mejor. Cualquier contribución que hagas será muy apreciada._
+Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar mejor. Cualquier contribución que hagas será muy apreciada.
 
-_Si queres aportar con alguna sugerencia para mejorarlo, simplemente un **fork** en el repo y crear un **pull request**. También podes abrir un issue con la etiqueta **enhancement**. ¡No te olvides de sumar una estrella al repo! **¡Gracias de nuevo!**_
+Si queres aportar con alguna sugerencia para mejorarlo, simplemente un **fork** en el repo y crear un **pull request**. También podes abrir un issue con la etiqueta **enhancement**. ¡No te olvides de sumar una estrella al repo! **¡Gracias de nuevo!**
 
 # 
 ### Autor ✒️
@@ -128,14 +128,8 @@ _Si queres aportar con alguna sugerencia para mejorarlo, simplemente un **fork**
 * [Kubernetes](https://kubernetes.io)
 * [GitHub](https://github.com/)
 * [Git](https://git-scm.com/)
-* [Linkedin](https://www.linkedin.com/)
 * [ArgoCD](https://argoproj.github.io/cd/)
 
 
 ---
-⌨️ con ❤️ por [Juan Pablo Soto](https://github.com/parrot26)
-
-
-
-
-
+⌨️ con 💪 por [Juan Pablo Soto](https://github.com/parrot26)
